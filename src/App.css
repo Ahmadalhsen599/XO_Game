@@ -1,0 +1,113 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.bu1{
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  border:1px solid black;
+}
+.p1{
+  font-size: 20px;
+  font-weight: 700;
+}
+.D1{
+ 
+  width: 400px;
+  border-radius: 10px;
+  height: 400px;
+}
+.ul1{
+  margin: 0;
+  padding: 0;
+ 
+  width: 400px!important;
+  flex-wrap: wrap;
+  list-style: none;
+  height: 400px!important;
+  border-radius: 10px;
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  margin: 0;
+  padding: 0;
+}
+.li1{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 35px;
+  border: 1px solid black;
+}
+.D2{
+  font-size: 20px;
+  width: 150px;
+  margin: auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.D3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 100px;
+}
+#winner{
+  background-color: rgb(62, 141, 141);
+}
+#reset{
+  background-color: rgb(210, 45, 45) !important;
+}
