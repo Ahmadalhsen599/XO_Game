@@ -10,7 +10,12 @@ const [matrix,setMatrex]=useState([[1,2,3],[4,5,6],[7,8,9]]);
 useEffect(()=>{
  if(playing_times.current>=3){ 
      winer();
+    
         }
+    if(winner){
+    console.log("fff");
+    console.clear();
+     }
 },[playing_times.current])
 function winer(){
 if(matrix[0][0]==="X" && matrix[0][2]==="X" && matrix[0][1]==="X"){
