@@ -69,6 +69,14 @@ else if(matrix[0][0]==="O" && matrix[1][1]==="O" && matrix[2][2]==="O"){
   setWinner(2);
   console.log(winner);
 }
+else if(matrix[0][2]==="X" && matrix[1][1]==="X" && matrix[2][0]==="X"){
+  setWinner(1);
+  console.log(winner);
+}
+else if(matrix[0][2]==="O" && matrix[1][1]==="O" && matrix[2][0]==="O"){
+  setWinner(2);
+  console.log(winner);
+}
 }
 function updateCell(row, col, ) {
   setMatrex(prev => {
