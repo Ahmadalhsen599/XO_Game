@@ -100,7 +100,7 @@ else if(matrix[0][2]==="O" && matrix[1][1]==="O" && matrix[2][0]==="O"){
 }
 }
 function updateCell(row, col, state) {
-  if(state===false){
+  if(state===0){
      setMatrex(prev => {
     const newMatrix=[[...prev[0]],[...prev[1]],[...prev[2]]];
       if(role.current%2===0){
@@ -117,6 +117,7 @@ function updateCell(row, col, state) {
     }); 
     playing_times.current++;
     if(playing_times.current===9){
+     
       reset();
     }
   }
@@ -137,6 +138,7 @@ function reset(){
 setMatrex(matrix_copy);
 setWinner(0);
 role.current=0;
+is_there_winner.current=0;
 playing_times.current=0;
 }
 display();
