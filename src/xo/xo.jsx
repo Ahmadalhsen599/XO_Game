@@ -3,6 +3,7 @@ import { useState,useEffect,useRef } from "react";
 const XO=function(){
 const list=[];
 const role=useRef(0);
+const iswinner=useRef(0);
 const [winner,setWinner]=useState(0);
 const playing_times=useRef(0);
 const matrix_copy=[[1,2,3],[4,5,6],[7,8,9]];
@@ -10,74 +11,90 @@ const [matrix,setMatrex]=useState([[1,2,3],[4,5,6],[7,8,9]]);
 useEffect(()=>{
  if(playing_times.current>=3){ 
      winer();
-    
+     if(iswinner.current){
+        console.log("fffff");
         }
-    if(winner){
-    console.log("fff");
+   
      }
 },[playing_times.current])
 function winer(){
 if(matrix[0][0]==="X" && matrix[0][2]==="X" && matrix[0][1]==="X"){
+    iswinner.current=1;
     setWinner(1);
     console.log(winner);
 }
 else if(matrix[0][0]==="O" && matrix[0][2]==="O" && matrix[0][1]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[1][0]==="O" && matrix[1][1]==="O" && matrix[1][2]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[1][0]==="X" && matrix[1][1]==="X" && matrix[1][2]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[2][0]==="O" && matrix[2][1]==="O" && matrix[2][2]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[2][0]==="X" && matrix[2][1]==="X" && matrix[2][2]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][0]==="X" && matrix[1][0]==="X" && matrix[2][0]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][0]==="O" && matrix[1][0]==="O" && matrix[2][0]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[0][1]==="X" && matrix[1][1]==="X" && matrix[2][1]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][1]==="O" && matrix[1][1]==="O" && matrix[2][1]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[0][2]==="O" && matrix[1][2]==="O" && matrix[2][2]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[0][2]==="X" && matrix[1][2]==="X" && matrix[2][2]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][0]==="X" && matrix[1][1]==="X" && matrix[2][2]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][0]==="O" && matrix[1][1]==="O" && matrix[2][2]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
 else if(matrix[0][2]==="X" && matrix[1][1]==="X" && matrix[2][0]==="X"){
+  iswinner.current=1;
   setWinner(1);
   console.log(winner);
 }
 else if(matrix[0][2]==="O" && matrix[1][1]==="O" && matrix[2][0]==="O"){
+  iswinner.current=1;
   setWinner(2);
   console.log(winner);
 }
