@@ -14,7 +14,6 @@ useEffect(()=>{
         }
     if(winner){
     console.log("fff");
-    console.clear();
      }
 },[playing_times.current])
 function winer(){
