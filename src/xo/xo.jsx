@@ -95,6 +95,7 @@ for (let i = 0; i < 3; i++) {
 function reset(){
 setMatrex(matrix_copy);
 setWinner(0);
+role.current=0;
 playing_times.current=0;
 }
 display();
