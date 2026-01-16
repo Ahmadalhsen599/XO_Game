@@ -122,6 +122,7 @@ function updateCell(row, col, state) {
   }
   else {
     console.log("there is a winner i will not change the cell");
+    console.log(is_there_winner.current);
   }  
 }
 function display(){
