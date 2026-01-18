@@ -2,9 +2,10 @@ import React from "react";
 import { useState,useEffect,useRef } from "react";
 import { FaTimes } from 'react-icons/fa';
 import { FaRedo } from 'react-icons/fa';
-
 const XO=function(){
 const list=[];
+let k=0;
+const colors=["x","o","x","o","x","o","x","o","x"];
 const role=useRef(0);
 const current_player=useRef("");
 const is_there_winner=useRef(0);
@@ -12,6 +13,7 @@ const [O_winns,setO_winns]=useState(0);
 const [X_winns,setX_winns]=useState(0);
 const [total_plays,settotal_playes]=useState(0);
 const [active,setactive]=useState(0);
+const color_item=useRef(0);
 let popup_style={display:active?"block":"none"};
 const [winner,setWinner]=useState(0);
 const playing_times=useRef(0);
@@ -28,11 +30,15 @@ useEffect(()=>{
 function disactive(){
 setactive(0);
 }
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 function winer(){
 if(matrix[0][0]==="X" && matrix[0][2]==="X" && matrix[0][1]==="X"){
     is_there_winner.current=1;
     setWinner(1);
     setactive(1);
+    
     setX_winns(X_winns+1);
     settotal_playes(total_plays+1);
     console.log(winner);
@@ -160,6 +166,7 @@ else if(matrix[0][2]==="O" && matrix[1][1]==="O" && matrix[2][0]==="O"){
 }
 function updateCell(row, col, state) {
   if(state===0){
+    color_item.current++;
      setMatrex(prev => {
     const newMatrix=[[...prev[0]],[...prev[1]],[...prev[2]]];
       if(role.current%2===0){
@@ -176,6 +183,7 @@ function updateCell(row, col, state) {
     }); 
     playing_times.current++;
     if(playing_times.current===9){
+      settotal_playes(total_plays+1);
       reset();
     }
   }
@@ -187,8 +195,22 @@ function updateCell(row, col, state) {
 function display(){
 for (let i = 0; i < 3; i++) {
    for (let j = 0; j < 3; j++) {
-   list.push(<li className="li1" id={current_player.current==="X"?"x":"o"} onClick={()=>updateCell(i,j,is_there_winner.current)}>{matrix[i][j]}</li>)
-   }
+  
+   list.push(<li key={k}
+  className={`li1 ${
+    matrix[i][j] === "X"
+      ? "x"
+      : matrix[i][j] === "O"
+      ? "o"
+      : ""
+  }`}
+  onClick={() => updateCell(i, j, is_there_winner.current)}
+>
+  {matrix[i][j]}
+</li>
+)
+   k++; 
+  }
 }
 }
 function reset(){
@@ -210,9 +232,9 @@ return <>
 </div>
 <center>
   <div className="D11">
-   <div className="D12"><p id="x">x</p><p id="o">o</p></div>
-   <div className="D13">current  {current_player.current}</div>
-   <div className="D14"><FaRedo size={24} color=" rgb(29, 53, 66);" /></div>
+   <div className="D12"><p className="x">x</p><p className="o">o</p></div>
+   <div className="D13">current  {current_player.current==="X"?"O":"X"}</div>
+   <div className="D14"><FaRedo onClick={reset} size={24} color=" rgb(29, 53, 66)" /></div>
   </div>
 </center>
 <center><div className="D1">

@@ -4,8 +4,7 @@
 }
 body{
   background-color: rgb(24, 41,51 );
-  height: 700px;
-  width: 100%;
+ 
 }
 #root {
   max-width: 1280px;
@@ -134,13 +133,13 @@ background-color: black;
 color: white;
 }
 
-#x{
+.x{
   color: rgb(28,185,195);
   font-size: 40px;
   font-weight: bold;
 
 }
-#o{
+.o{
   color: rgb(237,178,47);
   font-size: 40px;
   font-weight: bold;
